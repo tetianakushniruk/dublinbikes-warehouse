@@ -2,7 +2,8 @@
     materialized='incremental',
     unique_key=['station_id', 'recorded_at_minute'],
     incremental_strategy='delete+insert',
-    on_schema_change='sync_all_columns'
+    on_schema_change='sync_all_columns',
+    tags = ['realtime']
 ) }}
 
 with status as (

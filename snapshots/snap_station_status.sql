@@ -3,7 +3,8 @@
 {{ config(
     unique_key='station_id',
     strategy='check',
-    check_cols=['bikes_available', 'docks_available']
+    check_cols=['bikes_available', 'docks_available'],
+    tags = ['realtime']
 ) }}
 select * from {{ src }}
 {% endsnapshot %}

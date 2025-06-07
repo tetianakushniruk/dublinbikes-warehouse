@@ -1,0 +1,67 @@
+name: dublinbikes-realtime
+on:
+  workflow_dispatch:            
+  schedule:
+    - cron: '*/5 * * * *'       
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: dublinbikes-realtime
+      cancel-in-progress: true
+
+    env:
+      DBT_PROFILES_DIR: ./ci_profile
+      DB_FILE: warehouse.duckdb
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download previous warehouse (if exists)
+      uses: actions/download-artifact@v4
+      with:
+        name: warehouse
+        path: ${{ env.DB_FILE }}
+      continue-on-error: true 
+
+    - uses: actions/setup-python@v5
+      with: { python-version: '3.12' }
+    - run: pip install -r requirements.txt
+    - name: Create dbt profile for DuckDB
+      run: |
+        mkdir -p "$DBT_PROFILES_DIR"
+        cat > "$DBT_PROFILES_DIR/profiles.yml" <<'YAML'
+        dbt_dublinbikes:
+          outputs:
+            dev:
+              type: duckdb
+              path: ${DB_FILE}
+          target: dev
+        YAML
+    - run: dbt deps
+    - run: python scripts/ingest_dublinbikes.py
+    - run: dbt run --select tag:realtime
+    - name: Show latest availability
+      run: |
+        python - <<'PY'
+        import duckdb, os, datetime, pandas as pd
+        conn = duckdb.connect(os.environ['DB_FILE'], read_only=True)
+        df = conn.execute("""
+          with t as (select max(recorded_at_minute) as ts from fact_bike_availability)
+          select station_id, bikes_available, capacity, availability_pct
+          from fact_bike_availability, t
+          where recorded_at_minute = t.ts
+          order by availability_pct asc
+          limit 5
+        """).df()
+        ts = conn.execute("select max(recorded_at_minute) from fact_bike_availability").fetchone()[0]
+        print("Latest timestamp:", ts)
+        print(df.to_markdown(index=False))
+        PY
+
+    - name: Persist warehouse
+      uses: actions/upload-artifact@v4
+      with:
+        name: warehouse
+        path: ${{ env.DB_FILE }}
+        retention-days: 3   

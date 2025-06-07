@@ -17344,3 +17344,335 @@ left join "warehouse"."main"."dim_station" d using (station_id)
 [0m13:11:45.972244 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10596a1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105969650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059695d0>]}
 [0m13:11:45.972453 [debug] [MainThread]: Flushing usage events
 [0m13:11:46.591994 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:26:54.346949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b82310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110bf8a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110bf9010>]}
+
+
+============================== 14:26:54.351260 | cf7f4607-5be1-41b8-9f1b-10f0285f988d ==============================
+[0m14:26:54.351260 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:26:54.351768 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select tag:realtime+', 'version_check': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'profiles_dir': '/Users/tatiana/.dbt', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error': 'None', 'log_path': '/Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/logs', 'write_json': 'True', 'quiet': 'False', 'debug': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'empty': 'False', 'use_colors': 'True', 'target_path': 'None'}
+[0m14:26:54.531451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110b76010>]}
+[0m14:26:54.555173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053d85d0>]}
+[0m14:26:54.558796 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m14:26:54.612398 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m14:26:54.728952 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m14:26:54.729349 [debug] [MainThread]: Partial parsing: updated file: dbt_dublinbikes://models/fact/fact_bike_availability.sql
+[0m14:26:54.729538 [debug] [MainThread]: Partial parsing: updated file: dbt_dublinbikes://snapshots/snap_station_status.sql
+[0m14:26:54.999980 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_dublinbikes.example
+[0m14:26:55.007962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117bfc90>]}
+[0m14:26:55.093187 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/manifest.json
+[0m14:26:55.095143 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/semantic_manifest.json
+[0m14:26:55.107261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1116994d0>]}
+[0m14:26:55.107576 [info ] [MainThread]: Found 6 models, 7 data tests, 1 snapshot, 2 sources, 1 exposure, 704 macros
+[0m14:26:55.107767 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1115cd310>]}
+[0m14:26:55.108513 [info ] [MainThread]: 
+[0m14:26:55.108695 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:26:55.108834 [info ] [MainThread]: 
+[0m14:26:55.109084 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m14:26:55.109488 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_warehouse'
+[0m14:26:55.168557 [debug] [ThreadPool]: Using duckdb connection "list_warehouse"
+[0m14:26:55.168852 [debug] [ThreadPool]: On list_warehouse: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "connection_name": "list_warehouse"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"warehouse"'
+    
+  
+  
+[0m14:26:55.169005 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:26:55.239746 [debug] [ThreadPool]: SQL status: OK in 0.071 seconds
+[0m14:26:55.241287 [debug] [ThreadPool]: On list_warehouse: Close
+[0m14:26:55.241655 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_warehouse, now create_warehouse_main)
+[0m14:26:55.242109 [debug] [ThreadPool]: Creating schema "database: "warehouse"
+schema: "main"
+"
+[0m14:26:55.245475 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:26:55.245652 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='warehouse'
+        and type='sqlite'
+    
+  
+[0m14:26:55.245792 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:26:55.246666 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:26:55.247373 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:26:55.247515 [debug] [ThreadPool]: On create_warehouse_main: BEGIN
+[0m14:26:55.247721 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:26:55.247859 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:26:55.247987 [debug] [ThreadPool]: On create_warehouse_main: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "connection_name": "create_warehouse_main"} */
+
+    
+    
+        create schema if not exists "warehouse"."main"
+    
+[0m14:26:55.248895 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m14:26:55.249286 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:26:55.249428 [debug] [ThreadPool]: Using duckdb connection "create_warehouse_main"
+[0m14:26:55.249550 [debug] [ThreadPool]: On create_warehouse_main: COMMIT
+[0m14:26:55.249737 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:26:55.249874 [debug] [ThreadPool]: On create_warehouse_main: Close
+[0m14:26:55.252384 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_warehouse_main, now list_warehouse_main)
+[0m14:26:55.255147 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:26:55.255375 [debug] [ThreadPool]: On list_warehouse_main: BEGIN
+[0m14:26:55.255512 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:26:55.255792 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m14:26:55.255916 [debug] [ThreadPool]: Using duckdb connection "list_warehouse_main"
+[0m14:26:55.256045 [debug] [ThreadPool]: On list_warehouse_main: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "connection_name": "list_warehouse_main"} */
+select
+      'warehouse' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'warehouse'
+  
+[0m14:26:55.266926 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m14:26:55.267862 [debug] [ThreadPool]: On list_warehouse_main: ROLLBACK
+[0m14:26:55.268535 [debug] [ThreadPool]: Failed to rollback 'list_warehouse_main'
+[0m14:26:55.268715 [debug] [ThreadPool]: On list_warehouse_main: Close
+[0m14:26:55.269562 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1117d6750>]}
+[0m14:26:55.269820 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:26:55.269960 [debug] [MainThread]: On master: BEGIN
+[0m14:26:55.270080 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:26:55.270366 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:26:55.270497 [debug] [MainThread]: On master: COMMIT
+[0m14:26:55.270623 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:26:55.270747 [debug] [MainThread]: On master: COMMIT
+[0m14:26:55.270929 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:26:55.271061 [debug] [MainThread]: On master: Close
+[0m14:26:55.272650 [debug] [Thread-1 (]: Began running node model.dbt_dublinbikes.fact_bike_availability
+[0m14:26:55.272895 [info ] [Thread-1 (]: 1 of 1 START sql incremental model main.fact_bike_availability ................. [RUN]
+[0m14:26:55.273112 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_warehouse_main, now model.dbt_dublinbikes.fact_bike_availability)
+[0m14:26:55.273281 [debug] [Thread-1 (]: Began compiling node model.dbt_dublinbikes.fact_bike_availability
+[0m14:26:55.278375 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.279030 [debug] [Thread-1 (]: Began executing node model.dbt_dublinbikes.fact_bike_availability
+[0m14:26:55.302783 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.303112 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+    
+  
+    
+    
+
+    create temporary table
+      "fact_bike_availability__dbt_tmp20250607142655292657"
+  
+    as (
+      
+
+with status as (
+    select *
+    from "warehouse"."main"."stg_station_status"
+    
+    where recorded_at_minute > (select max(recorded_at_minute) from "warehouse"."main"."fact_bike_availability")
+    
+)
+select
+    s.station_id,
+    s.recorded_at_minute,
+    s.bikes_available,
+    s.docks_available,
+    d.capacity,
+    1.0 * s.bikes_available / nullif(d.capacity, 0) as availability_pct
+from status s
+left join "warehouse"."main"."dim_station" d using (station_id)
+    );
+  
+  
+  
+[0m14:26:55.303307 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:26:55.312434 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m14:26:55.316137 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.316338 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: BEGIN
+[0m14:26:55.316601 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m14:26:55.316765 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.316936 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fact_bike_availability__dbt_tmp20250607142655292657'
+      
+      
+      order by ordinal_position
+
+  
+[0m14:26:55.318928 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m14:26:55.321367 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.321574 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fact_bike_availability'
+      
+      and lower(table_schema) = 'main'
+      
+      
+      and lower(table_catalog) = 'warehouse'
+      
+      order by ordinal_position
+
+  
+[0m14:26:55.322898 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:26:55.328539 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.328747 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fact_bike_availability__dbt_tmp20250607142655292657'
+      
+      
+      order by ordinal_position
+
+  
+[0m14:26:55.329942 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:26:55.331368 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.331547 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from system.information_schema.columns
+      where table_name = 'fact_bike_availability'
+      
+      and lower(table_schema) = 'main'
+      
+      
+      and lower(table_catalog) = 'warehouse'
+      
+      order by ordinal_position
+
+  
+[0m14:26:55.332738 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m14:26:55.336587 [debug] [Thread-1 (]: 
+    In "warehouse"."main"."fact_bike_availability":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m14:26:55.341642 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.342091 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.342287 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_dublinbikes", "target_name": "dev", "node_id": "model.dbt_dublinbikes.fact_bike_availability"} */
+
+        
+            delete from "warehouse"."main"."fact_bike_availability" as DBT_INCREMENTAL_TARGET
+            using "fact_bike_availability__dbt_tmp20250607142655292657"
+            where (
+                
+                    "fact_bike_availability__dbt_tmp20250607142655292657".station_id = DBT_INCREMENTAL_TARGET.station_id
+                    and 
+                
+                    "fact_bike_availability__dbt_tmp20250607142655292657".recorded_at_minute = DBT_INCREMENTAL_TARGET.recorded_at_minute
+                    
+                
+                
+            );
+        
+    
+
+    insert into "warehouse"."main"."fact_bike_availability" ("station_id", "recorded_at_minute", "bikes_available", "docks_available", "capacity", "availability_pct")
+    (
+        select "station_id", "recorded_at_minute", "bikes_available", "docks_available", "capacity", "availability_pct"
+        from "fact_bike_availability__dbt_tmp20250607142655292657"
+    )
+  
+[0m14:26:55.344259 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m14:26:55.349121 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: COMMIT
+[0m14:26:55.349368 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_dublinbikes.fact_bike_availability"
+[0m14:26:55.349541 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: COMMIT
+[0m14:26:55.349838 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m14:26:55.350735 [debug] [Thread-1 (]: On model.dbt_dublinbikes.fact_bike_availability: Close
+[0m14:26:55.351733 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cf7f4607-5be1-41b8-9f1b-10f0285f988d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111a4ad50>]}
+[0m14:26:55.352090 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model main.fact_bike_availability ............ [[32mOK[0m in 0.08s]
+[0m14:26:55.352374 [debug] [Thread-1 (]: Finished running node model.dbt_dublinbikes.fact_bike_availability
+[0m14:26:55.352951 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:26:55.353107 [debug] [MainThread]: On master: BEGIN
+[0m14:26:55.353248 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:26:55.353502 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:26:55.353766 [debug] [MainThread]: On master: COMMIT
+[0m14:26:55.353935 [debug] [MainThread]: Using duckdb connection "master"
+[0m14:26:55.354061 [debug] [MainThread]: On master: COMMIT
+[0m14:26:55.354323 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m14:26:55.354472 [debug] [MainThread]: On master: Close
+[0m14:26:55.354654 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:26:55.354772 [debug] [MainThread]: Connection 'model.dbt_dublinbikes.fact_bike_availability' was properly closed.
+[0m14:26:55.354910 [info ] [MainThread]: 
+[0m14:26:55.355059 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.25 seconds (0.25s).
+[0m14:26:55.355336 [debug] [MainThread]: Command end result
+[0m14:26:55.372281 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/manifest.json
+[0m14:26:55.373299 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/semantic_manifest.json
+[0m14:26:55.376366 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/run_results.json
+[0m14:26:55.376542 [info ] [MainThread]: 
+[0m14:26:55.376746 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:26:55.376889 [info ] [MainThread]: 
+[0m14:26:55.377054 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m14:26:55.378595 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.0683696, "process_in_blocks": "0", "process_kernel_time": 0.259187, "process_mem_max_rss": "152977408", "process_out_blocks": "0", "process_user_time": 1.298414}
+[0m14:26:55.378844 [debug] [MainThread]: Command `dbt run` succeeded at 14:26:55.378806 after 1.07 seconds
+[0m14:26:55.379027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110bf8e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10364b510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103734990>]}
+[0m14:26:55.379205 [debug] [MainThread]: Flushing usage events
+[0m14:26:55.949801 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:27:11.629527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d14ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d69a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d99410>]}
+
+
+============================== 14:27:11.631200 | 394c4c8c-3aff-47a1-9c6d-21230e1b7e74 ==============================
+[0m14:27:11.631200 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:27:11.631552 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'empty': 'None', 'profiles_dir': '/Users/tatiana/.dbt', 'invocation_command': 'dbt ls --select tag:realtime', 'cache_selected_only': 'False', 'target_path': 'None', 'log_format': 'default', 'static_parser': 'True', 'printer_width': '80', 'use_colors': 'True', 'log_path': '/Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/logs', 'introspect': 'True', 'write_json': 'True', 'version_check': 'True', 'debug': 'False', 'quiet': 'False', 'no_print': 'None', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:27:11.748434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '394c4c8c-3aff-47a1-9c6d-21230e1b7e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107dd0250>]}
+[0m14:27:11.772160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '394c4c8c-3aff-47a1-9c6d-21230e1b7e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105415c10>]}
+[0m14:27:11.775360 [info ] [MainThread]: Registered adapter: duckdb=1.9.3
+[0m14:27:11.822535 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m14:27:11.936784 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:27:11.937148 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:27:11.940265 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_dublinbikes.example
+[0m14:27:11.967619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '394c4c8c-3aff-47a1-9c6d-21230e1b7e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108168090>]}
+[0m14:27:12.025816 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/manifest.json
+[0m14:27:12.027163 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/target/semantic_manifest.json
+[0m14:27:12.036948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '394c4c8c-3aff-47a1-9c6d-21230e1b7e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082697d0>]}
+[0m14:27:12.037333 [info ] [MainThread]: Found 6 models, 7 data tests, 1 snapshot, 2 sources, 1 exposure, 704 macros
+[0m14:27:12.037534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '394c4c8c-3aff-47a1-9c6d-21230e1b7e74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108298510>]}
+[0m14:27:12.037928 [info ] [MainThread]: dbt_dublinbikes.fact.fact_bike_availability
+[0m14:27:12.038084 [info ] [MainThread]: dbt_dublinbikes.snap_station_status.snap_station_status
+[0m14:27:12.038211 [info ] [MainThread]: dbt_dublinbikes.dbt_expectations_expect_column_values_to_be_between_fact_bike_availability_availability_pct__1__0
+[0m14:27:12.038330 [info ] [MainThread]: dbt_dublinbikes.dbt_expectations_expect_column_values_to_be_between_fact_bike_availability_bikes_available__0
+[0m14:27:12.038451 [info ] [MainThread]: dbt_dublinbikes.not_null_fact_bike_availability_bikes_available
+[0m14:27:12.038568 [info ] [MainThread]: dbt_dublinbikes.not_null_fact_bike_availability_recorded_at_minute
+[0m14:27:12.038683 [info ] [MainThread]: dbt_dublinbikes.not_null_fact_bike_availability_station_id
+[0m14:27:12.040222 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 0.44094953, "process_in_blocks": "0", "process_kernel_time": 0.168733, "process_mem_max_rss": "125698048", "process_out_blocks": "0", "process_user_time": 0.891507}
+[0m14:27:12.040614 [debug] [MainThread]: Command `dbt ls` succeeded at 14:27:12.040557 after 0.44 seconds
+[0m14:27:12.040833 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10374b710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d74b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10826a690>]}
+[0m14:27:12.041022 [debug] [MainThread]: Flushing usage events
+[0m14:27:12.548984 [debug] [MainThread]: An error was encountered while trying to flush usage events
