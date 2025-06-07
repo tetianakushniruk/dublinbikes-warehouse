@@ -30,4 +30,4 @@ jobs:
           YAML
       - run: dbt deps
       - run: python scripts/ingest_dublinbikes.py
-      - run: dbt build --select state:modified+
+      - run: dbt build --select tag:realtime
