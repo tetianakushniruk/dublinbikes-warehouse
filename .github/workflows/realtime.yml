@@ -35,12 +35,12 @@ jobs:
           outputs:
             dev:
               type: duckdb
-              path: ${DB_FILE}
+              path: "{{ env_var('DB_FILE', 'warehouse.duckdb') }}"
           target: dev
         YAML
     - run: dbt deps
     - run: python scripts/ingest_dublinbikes.py
-    - run: dbt run --select tag:realtime
+    - run: dbt run --select tag:realtime+
     - name: Show latest availability
       run: |
         python - <<'PY'

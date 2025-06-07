@@ -1,6 +1,8 @@
 import requests, duckdb, pathlib, datetime
 import pandas as pd
 
+DB_FILE = os.getenv("DB_FILE", "warehouse.duckdb")
+
 API_URL = "https://api.cyclocity.fr/contracts/dublin/gbfs/v2"
 FEEDS = {
     "station_information": "station_information.json",
@@ -30,4 +32,4 @@ def main(db_path):
 
 
 if __name__ == "__main__":
-    main("warehouse.duckdb")
+    main(DB_FILE)
