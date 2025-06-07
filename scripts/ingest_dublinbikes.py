@@ -30,4 +30,4 @@ def main(db_path):
 
 
 if __name__ == "__main__":
-    main("dbt_dublinbikes/warehouse.duckdb")
+    main("warehouse.duckdb")

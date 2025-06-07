@@ -3,7 +3,7 @@ import duckdb
 import pandas as pd
 
 st.set_page_config(page_title="Dublin Bikes Live", page_icon=":bike:", layout="wide")
-conn = duckdb.connect("dbt_dublinbikes/warehouse.duckdb")
+conn = duckdb.connect("warehouse.duckdb")
 query = """
     SELECT * FROM fact_bike_availability
     ORDER BY recorded_at_minute DESC
