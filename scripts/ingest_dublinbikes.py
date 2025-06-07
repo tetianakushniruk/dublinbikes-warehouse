@@ -1,4 +1,4 @@
-import requests, duckdb, pathlib, datetime
+import os, requests, duckdb, pathlib, datetime
 import pandas as pd
 
 DB_FILE = os.getenv("DB_FILE", "warehouse.duckdb")
