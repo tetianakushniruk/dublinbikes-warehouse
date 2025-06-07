@@ -1,0 +1,5 @@
+dbt-core>=1.8
+dbt-duckdb
+duckdb
+requests
+pandas
