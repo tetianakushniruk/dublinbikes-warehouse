@@ -1,0 +1,17 @@
+name: dbt-build
+on:
+  push: { branches: [ main ] }
+  schedule:
+    - cron: "*/15 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install "dbt-core>=1.8" dbt-duckdb duckdb requests
+      - run: dbt deps
+      - run: python scripts/ingest_dublinbikes.py
+      - run: dbt build --select state:modified+
+

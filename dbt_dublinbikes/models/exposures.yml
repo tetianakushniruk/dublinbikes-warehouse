@@ -1,0 +1,11 @@
+version: 2
+exposures:
+  - name: availability_dashboard
+    type: dashboard
+    maturity: low
+    url: http://localhost:8501
+    owner:
+      name: Tatiana
+      email: tetiana.kushniruk@gmail.com
+    depends_on:
+      - ref('fact_bike_availability')

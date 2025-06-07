@@ -1,0 +1,1 @@
+select * from raw__station_information

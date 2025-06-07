@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: dublinbikes
+    schema: main
+    tables:
+      - name: station_information
+        identifier: raw__station_information
+      - name: station_status
+        identifier: raw__station_status
+        loaded_at_field: last_reported
+        freshness:
+          warn_after: {count: 3, period: minute}
+          error_after: {count: 5, period: minute}

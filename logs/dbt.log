@@ -1,0 +1,80 @@
+[0m10:00:42.148628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056407d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053270d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105650b10>]}
+
+
+============================== 10:00:42.150826 | 400dedd2-3855-41c0-94f1-e0b2dbe00499 ==============================
+[0m10:00:42.150826 [info ] [MainThread]: Running with dbt=1.9.6
+[0m10:00:42.151162 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'empty': 'None', 'static_parser': 'True', 'write_json': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'printer_width': '80', 'log_format': 'default', 'invocation_command': 'dbt init dbt_dublinbikes', 'debug': 'False', 'use_colors': 'True', 'profiles_dir': '/Users/tatiana/.dbt', 'quiet': 'False', 'log_path': 'logs'}
+[0m10:00:42.158830 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object, got 'PosixPath'.. Dictionary: {'dir': PosixPath('/Users/tatiana/.dbt')}
+[0m10:00:42.159030 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m10:00:42.160131 [debug] [MainThread]: Starter project path: /opt/anaconda3/lib/python3.11/site-packages/dbt/include/starter_project
+[0m10:00:42.163786 [info ] [MainThread]: 
+Your new dbt project "dbt_dublinbikes" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:00:42.163964 [info ] [MainThread]: Setting up your profile.
+[0m10:00:58.331405 [info ] [MainThread]: Profile dbt_dublinbikes written to /Users/tatiana/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m10:00:58.441002 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 16.32781, "process_in_blocks": "0", "process_kernel_time": 0.157163, "process_mem_max_rss": "111230976", "process_out_blocks": "0", "process_user_time": 0.611454}
+[0m10:00:58.441372 [debug] [MainThread]: Command `dbt init` succeeded at 10:00:58.441321 after 16.33 seconds
+[0m10:00:58.441570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053f4390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056d5590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x101100890>]}
+[0m10:00:58.441757 [debug] [MainThread]: Flushing usage events
+[0m10:00:59.047001 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:55:00.863550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1035c2e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106cc89d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ceff50>]}
+
+
+============================== 10:55:00.865667 | 6360299d-09ff-496a-aade-07b671bc377b ==============================
+[0m10:55:00.865667 [info ] [MainThread]: Running with dbt=1.9.6
+[0m10:55:00.866063 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_path': 'logs', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'warn_error': 'None', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt deps', 'partial_parse': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'profiles_dir': '/Users/tatiana/.dbt', 'indirect_selection': 'eager', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True'}
+[0m10:55:00.866566 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/tatiana/Documents/DublinBikes/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m10:55:00.868041 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.03784133, "process_in_blocks": "0", "process_kernel_time": 0.146501, "process_mem_max_rss": "105168896", "process_out_blocks": "0", "process_user_time": 0.557591}
+[0m10:55:00.868331 [debug] [MainThread]: Command `dbt deps` failed at 10:55:00.868279 after 0.04 seconds
+[0m10:55:00.868536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c81010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ce34d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ce00d0>]}
+[0m10:55:00.868713 [debug] [MainThread]: Flushing usage events
+[0m10:55:01.450090 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:00:24.027643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105c63650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10437da50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cd4f10>]}
+
+
+============================== 11:00:24.030130 | 4390b78d-7815-470d-81af-72b61c917028 ==============================
+[0m11:00:24.030130 [info ] [MainThread]: Running with dbt=1.9.6
+[0m11:00:24.030514 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/tatiana/.dbt', 'use_experimental_parser': 'False', 'introspect': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'target_path': 'None', 'invocation_command': 'dbt deps', 'quiet': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'empty': 'None', 'write_json': 'True', 'no_print': 'None', 'version_check': 'True', 'static_parser': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_colors': 'True'}
+[0m11:00:24.031075 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:00:24.032638 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": false, "command_wall_clock_time": 0.039668, "process_in_blocks": "0", "process_kernel_time": 0.14805, "process_mem_max_rss": "104431616", "process_out_blocks": "0", "process_user_time": 0.562485}
+[0m11:00:24.032980 [debug] [MainThread]: Command `dbt deps` failed at 11:00:24.032922 after 0.04 seconds
+[0m11:00:24.033211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10169b590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1017f2310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105cb7090>]}
+[0m11:00:24.033429 [debug] [MainThread]: Flushing usage events
+[0m11:00:24.597365 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:49:52.999894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c48190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ea8b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ea9110>]}
+
+
+============================== 11:49:53.001845 | 3bf0e4f1-7ec5-40c1-be3c-dfd6f3890c01 ==============================
+[0m11:49:53.001845 [info ] [MainThread]: Running with dbt=1.9.6
+[0m11:49:53.002228 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'quiet': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'no_print': 'None', 'fail_fast': 'False', 'version_check': 'True', 'printer_width': '80', 'invocation_command': 'dbt build --full-refresh', 'debug': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'profiles_dir': '/Users/tatiana/.dbt', 'introspect': 'True', 'empty': 'False', 'write_json': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'log_path': 'logs', 'indirect_selection': 'eager'}
+[0m11:49:53.002568 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/tatiana/Documents/DublinBikes/dublinbikes-warehouse/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:49:53.003923 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 0.039235584, "process_in_blocks": "0", "process_kernel_time": 0.143055, "process_mem_max_rss": "105037824", "process_out_blocks": "0", "process_user_time": 0.562441}
+[0m11:49:53.004243 [debug] [MainThread]: Command `dbt build` failed at 11:49:53.004189 after 0.04 seconds
+[0m11:49:53.004464 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ea93d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102997290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102a80790>]}
+[0m11:49:53.004658 [debug] [MainThread]: Flushing usage events
+[0m11:49:53.507078 [debug] [MainThread]: An error was encountered while trying to flush usage events

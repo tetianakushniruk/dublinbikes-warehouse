@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_station
+    description: Station dimension
+    columns:
+      - name: station_id
+        tests: [not_null, unique]
+
+  - name: fact_bike_availability
+    description: Bikes available per station‑minute
+    columns:
+      - name: station_id
+        tests: [not_null]
+      - name: recorded_at_minute
+        tests: [not_null]
+      - name: bikes_available
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: availability_pct
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
