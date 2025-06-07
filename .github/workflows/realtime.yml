@@ -56,7 +56,7 @@ jobs:
         """).df()
         ts = conn.execute("select max(recorded_at_minute) from fact_bike_availability").fetchone()[0]
         print("Latest timestamp:", ts)
-        print(df.to_markdown(index=False))
+        print(df.to_string(index=False))
         PY
 
     - name: Persist warehouse
